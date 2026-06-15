@@ -1,0 +1,23 @@
+default:
+  image: node:20
+  before_script:
+    - npm ci
+
+stages:
+  - install
+  - test
+  - build
+
+install:
+  stage: install
+  script: []
+
+lint:
+  stage: test
+  script:
+    - npm run lint
+
+build:
+  stage: build
+  script:
+    - npm run build
